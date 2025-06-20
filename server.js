@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // for parsing form-data
+app.use(express.urlencoded({ extended: true })); 
 app.use('/', require('./routes/route'));
-// require('./cronServices');
+require('./cronServices');
 
 app.get('/test', (req, res) => res.send('Server is working!'));
 app.listen(9000, () => {
